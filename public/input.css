@@ -1,0 +1,18 @@
+.vazirmatn-regular {
+    font-family: "Vazirmatn", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.vazirmatn-black {
+    font-family: "Vazirmatn", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

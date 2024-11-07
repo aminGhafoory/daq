@@ -1,0 +1,27 @@
+package base
+
+templ Base(title string, scripts []string) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			// <script src="https://cdn.tailwindcss.com"></script>
+			// <script src="https://unpkg.com/htmx.org@2.0.0"></script>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ title }</title>
+			<link rel="preconnect" href="https://fonts.googleapis.com"/>
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+			<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet"/>
+			<link rel="stylesheet" href="public/style.css"/>
+			// <script src="https://cdn.tailwindcss.com"></script>
+			<script src="public/htmx.js"></script>
+			<script>htmx.config.selfRequestsOnly=false</script>
+			for _,s := range scripts {
+				<script type="text/javascript" src={ s }></script>
+			}
+			<link rel="shortcut icon" href="public/favicon.png" type="image/x-icon"/>
+			<link rel="stylesheet" href="public/style.css"/>
+		</head>
+		{ children... }
+	</html>
+}
