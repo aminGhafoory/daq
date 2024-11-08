@@ -10,6 +10,12 @@ import (
 	"github.com/google/uuid"
 )
 
+type Session struct {
+	UserID    uuid.UUID
+	CreatedAt time.Time
+	TokenHash string
+}
+
 type User struct {
 	UserID       uuid.UUID
 	CreatedAt    time.Time

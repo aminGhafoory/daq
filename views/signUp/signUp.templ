@@ -1,0 +1,49 @@
+package signUp
+
+import (
+	"github.com/aminGhafoory/daq/views/CSRF"
+	"github.com/aminGhafoory/daq/views/base"
+	"net/http"
+)
+
+templ NewUser(title string, r *http.Request, scripts []string) {
+	@base.Base(title, scripts) {
+		<div class="uk-child-width-expand@s uk-text-center ">
+			<div class="uk-flex-center-auto py-10 px-10">
+				<div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
+					<form action="/users" method="post">
+						@CSRF.CSRFfield(r)
+						<fieldset class="uk-fieldset">
+							<legend class="uk-legend uk-h1 ">Sign Up</legend>
+							<div class="uk-margin">
+								// <label for="email" class="font-semibold text-sm">Email Address</label>
+								<input
+									class="uk-input"
+									type="email"
+									name="email"
+									id="email"
+									placeholder="email"
+									aria-label="Input"
+									required
+								/>
+							</div>
+							<div class="uk-margin">
+								// <label for="password" class="font-semibold text-sm">password</label>
+								<input
+									class="uk-input"
+									type="password"
+									id="password"
+									name="password"
+									placeholder="password"
+									aria-label="Input"
+									required
+								/>
+							</div>
+							<button class="uk-button uk-button-primary " type="submit">submit</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	}
+}
